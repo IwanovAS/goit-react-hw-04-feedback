@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FeedbackOptions } from 'components/FeedBackOptions/FeedbackOptions';
 import { Section } from 'components/Section/Section';
 import { Statistics } from 'components/Statistics/Statistics';
@@ -25,13 +25,6 @@ export function App() {
     }
     return Math.round((feedback.good / totalFeedback()) * 100);
   };
-
-  useEffect(() => {
-    const savedFeedback = JSON.parse(localStorage.getItem('feedback'));
-    if (savedFeedback) {
-      setFeedback(savedFeedback);
-    }
-  }, []);
 
   const options = Object.keys(feedback);
 
